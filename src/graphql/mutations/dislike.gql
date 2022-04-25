@@ -1,0 +1,5 @@
+mutation Dislike($uuid: String!) {
+  dislike(uuid: $uuid) {
+    likes
+  }
+}

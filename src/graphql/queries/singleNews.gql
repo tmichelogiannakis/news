@@ -1,0 +1,10 @@
+query FetchSingleNews($uuid: String!) {
+  singleNews(uuid: $uuid) {
+    uuid
+    title
+    date
+    author
+    likes
+    text
+  }
+}

@@ -1,0 +1,9 @@
+mutation Delete($uuid: String!) {
+  delete(uuid: $uuid) {
+    uuid
+    title
+    date
+    author
+    likes
+  }
+}

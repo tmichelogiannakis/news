@@ -1,0 +1,41 @@
+schema:
+  - ${GRAPHQL_SERVER_URL}
+overwrite: true
+
+# Format files
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+
+generates:
+  # Get types from server
+  src/graphql/generated/types.ts:
+    documents:
+      - './src/graphql/**/**.gql'
+    plugins:
+      - typescript
+
+  # Create operations based on queries
+  src/graphql/generated/operations.ts:
+    documents:
+      - './src/graphql/**/**.gql'
+    preset: import-types
+    presetConfig:
+      typesPath: ./types
+    plugins:
+      - typescript-operations
+
+  # Create hooks based on queries
+  src/graphql/generated/hooks.ts:
+    documents:
+      - './src/graphql/**/**.gql'
+    preset: import-types
+    presetConfig:
+      typesPath: ./operations
+    plugins:
+      - typescript-react-apollo
+    config:
+      # Optionals
+      withHOC: false
+      withComponent: false
+      withHooks: true

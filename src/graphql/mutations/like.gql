@@ -1,0 +1,5 @@
+mutation Like($uuid: String!) {
+  like(uuid: $uuid) {
+    likes
+  }
+}

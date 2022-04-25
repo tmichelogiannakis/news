@@ -1,0 +1,9 @@
+query FetchNews {
+  news {
+    uuid
+    title
+    date
+    author
+    likes
+  }
+}
