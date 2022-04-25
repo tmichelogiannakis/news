@@ -16,7 +16,6 @@ Implement a react app using this graphql backend. App contains a **list of news*
 
 # Solution
 ## How to run
-Before all you have to add an .env file with all env variables shown in the .env-example
 - `npm run start` to run the app in the development mode. Open [http://localhost:1234](http://localhost:1234)
 - `npm test` to run the unit tests
 - `npm run typecheck` to check if there any typescript error
@@ -25,6 +24,8 @@ Before all you have to add an .env file with all env variables shown in the .env
 - `npm run build` to build the app for production.
 
 ## Notes
-- I added loremflickr images to make it look better.
+- I added loremflickr images to make the app look better.
 
 - I used as few as possible requests to graphql server according to description. In a real enviroment with multiple users interacting, refetches from backend should be used to keep data synced. 
+
+- You can find the app deployed [here](https://oceana-62233.web.app/) and the apollo server [here](https://oceana-graphql-server.herokuapp.com/graphql).
